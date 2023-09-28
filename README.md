@@ -68,38 +68,36 @@ Then their city should be changed to that city (i.e., “Berlin, Germany”) AND
 
 ##### Scenario 1: An event element is collapsed by default.
 
-Given the list of events has been loaded and an event element is collapsed
-When the user wants to see details he can click on the show details button to expand an event element
+Given on the events display page, the list of events has been loaded and not showing the details
+When the user wants to see details he can click on the "Show detail" button to expand an event element
 Then event will expand showing details for events
 
 ##### Scenario 2: User can expand an event to see details.
 
-Given an event element can be expanded to see the details
-When the user clicks on the show details button on an event element.
+Given on an events display page, event element can be expanded to see the details
+When the user clicks on the "Show detail" button on an event element.
 Then event element will expanded to show the event details
 
 ##### Scenario 3: User can collapse an event to hide details.
 
-Given an event element can be collapsed back to hide the details.
-When the user clicks the hide details button on an event element.
-Then event element will be collapsed to hide the event details
+Given on an events display page, event element is expanded and showing the details of events.
+When the user clicks the "Hide detail" button on an event element.
+Then event element will be collapsed and hides the event details
 
 ### Feature 3: Specify Number of Events.
 
 #### User Story: As a user, I would like to be able to specify the number of events I want to view in the app so that I can see more or fewer events in the events list at once.
 
-##### Scenario 1:
+##### Scenario 1:When user hasn’t specified a number, 32 events are shown by default.
 
-When user hasn’t specified a number, 32 events are shown by default.
-
-Given user has not specified the number of events.
-When the user does not type anything in the number of events in the text box.
+Given on events display page all the events are loaded.
+When the user does not type anything in the text box of number of events.
 Then the user can see 32 events by default.
 
 ##### Scenario 2: User can change the number of events displayed.
 
 Given user is on the event display page
-When the user types the number of events in the number of events text box.
+When the user types the number in the number of events text box.
 Then the user can see a specified number of events.
 
 ### Feature 4: Use the App When Offline.
@@ -114,7 +112,7 @@ Then the user can see the cached data when he was last logged in.
 
 ##### Scenario 2: Show error when user changes search settings (city, number of events).
 
-Given a user trying to change the search setting while offline.
+Given user is not connected to internet, opens the app and on event display page.
 When user types city or number of events
 Then an error will be displayed stating you are offline.
 
