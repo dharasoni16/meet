@@ -56,9 +56,9 @@ const getToken = async (code) => {
         if (!response.ok) {
             throw new Error(`HTTP error! status:${response.status}`)
         }
-        const { accessToken } = await response.json();
-        accessToken && localStorage.setItem("access_token", access_token);
-        return accessToken;
+        const { access_token } = await response.json();
+        access_token && localStorage.setItem("access_token", access_token);
+        return access_token;
     } catch (error) {
         error.json();
     }
