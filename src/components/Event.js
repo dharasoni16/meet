@@ -2,11 +2,10 @@ import { useState } from "react";
 const Event = ({ event }) => {
     const [showDetails, setShowDetails] = useState(false);
     return (
-        <li>
+        <li className="event">
             <p>{event.summary}</p>
-            <p>{event.created}</p>
+            <p>{(new Date(event.created)).toUTCString()}</p>
             <p>{event.location}</p>
-            <button onClick={() => { setShowDetails(!showDetails) }}>{showDetails ? 'hide details' : 'show details'}</button>
             {showDetails ? (
                 <div className="eventDetails">
                     <h3>Event Details</h3>
@@ -14,6 +13,7 @@ const Event = ({ event }) => {
                     <p>status:{event.status}</p>
                 </div>
             ) : null}
+            <button className="details-btn" onClick={() => { setShowDetails(!showDetails) }}>{showDetails ? 'hide details' : 'show details'}</button>
         </li>
     );
 }
