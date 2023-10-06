@@ -1,7 +1,3 @@
-/* eslint-disable testing-library/no-node-access */
-/* eslint-disable testing-library/prefer-presence-queries */
-/* eslint-disable testing-library/prefer-screen-queries */
-/* eslint-disable testing-library/no-render-in-setup */
 import Event from "../components/Event";
 import { render } from "@testing-library/react";
 import mockData from "../mock-data";

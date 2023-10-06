@@ -2,7 +2,7 @@ const NumberOfEvents = () => {
 
     return (
         <div id="number-of-events">
-            <input type="text" value={'32'} defaultValue="32" onChange={(e) => e.target.value} />
+            <input type="text" defaultValue="32" />
         </div>
     );
 
