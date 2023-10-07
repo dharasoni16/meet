@@ -16,7 +16,7 @@ describe('<Event/> component', () => {
     });
 
     test('renders event start time', () => {
-        expect(EventComponent.queryByText(mockEvent.created)).toBeInTheDocument();
+        expect(EventComponent.queryByText(new Date(mockEvent.created).toUTCString())).toBeInTheDocument();
     });
 
     test('renders event location', () => {
