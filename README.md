@@ -68,21 +68,21 @@ Then their city should be changed to that city (i.e., “Berlin, Germany”) AND
 
 ##### Scenario 1: An event element is collapsed by default.
 
-Given on the events display page, the list of events has been loaded and not showing the details
-When the user wants to see details he can click on the "Show detail" button to expand an event element
-Then event will expand showing details for events
+Given the user opens the app, and the events display page opens.
+When the user receives all the events from all locations or specific location
+Then all events will be collapsed by default.
 
 ##### Scenario 2: User can expand an event to see details.
 
-Given on an events display page, event element can be expanded to see the details
+Given user gets a list of events
 When the user clicks on the "Show detail" button on an event element.
 Then event element will expanded to show the event details
 
 ##### Scenario 3: User can collapse an event to hide details.
 
-Given on an events display page, event element is expanded and showing the details of events.
-When the user clicks the "Hide detail" button on an event element.
-Then event element will be collapsed and hides the event details
+Given user sees the details of an events.
+When the user clicks the "Hide detail" button on an event element
+Then event element will be collapsed and hides the event details of that element
 
 ### Feature 3: Specify Number of Events.
 
@@ -90,7 +90,7 @@ Then event element will be collapsed and hides the event details
 
 ##### Scenario 1:When user hasn’t specified a number, 32 events are shown by default.
 
-Given on events display page all the events are loaded.
+Given on events display page the list of events are loaded.
 When the user does not type anything in the text box of number of events.
 Then the user can see 32 events by default.
 
