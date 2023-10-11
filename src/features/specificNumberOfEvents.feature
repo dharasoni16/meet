@@ -1,6 +1,6 @@
 Feature: Specify number of events
 
-    Scenario:When user hasn’t specified a number, 32 events are shown by default.
+    Scenario: When user hasn’t specified a number, 32 events are shown by default.
         Given on events display page the list of events are loaded.
         When the user does not type anything in the text box of number of events.
         Then the user can see 32 events by default.
