@@ -3,7 +3,7 @@ import EventList from './components/EventList';
 import NumberOfEvents from './components/NumberOfEvents';
 import { useEffect, useState } from 'react';
 import { extractLocations, getEvents } from './api';
-import { InfoAlert, ErrorAlert } from './components/Alert';
+import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
 import './App.css';
 
 const App = () => {
@@ -13,7 +13,15 @@ const App = () => {
   const [currentCity, setCurrentCity] = useState("See all cities");
   const [infoAlert, setInfoAlert] = useState("");
   const [errorAlert, setErrorAlert] = useState("");
+  const [warningAlert, setWarningAlert] = useState("");
   useEffect(() => {
+    if (navigator.onLine) {
+      // set the warning alert message to an empty string ""
+      setWarningAlert("");
+    } else {
+      // set the warning alert message to a non-empty string
+      setWarningAlert(" Displayed events has been loaded from Cache memory");
+    }
     fetchData();
   }, [currentCity, currentNOE]);
 
@@ -27,7 +35,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="alerts-container">{infoAlert.length ? <InfoAlert text={infoAlert} /> : null}
-        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}</div>
+        {errorAlert.length ? <ErrorAlert text={errorAlert} /> : null}{warningAlert.length ? <WarningAlert text={warningAlert} /> : null}</div>
       <h1>Meet Event App</h1>
       <CitySearch allLocations={allLocations} setCurrentCity={setCurrentCity} setInfoAlert={setInfoAlert} />
       <NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} />
