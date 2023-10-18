@@ -13,7 +13,7 @@ const Event = ({ event }) => {
                     <p>status:{event.status}</p>
                 </div>
             ) : null}
-            <button className="details-btn" onClick={() => { setShowDetails(!showDetails) }}>{showDetails ? 'hide details' : 'show details'}</button>
+            <button className="details-btn" onClick={() => { setShowDetails(!showDetails) }}>{showDetails ? 'Hide Details' : 'Show Details'}</button>
         </li>
     );
 }

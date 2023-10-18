@@ -41,7 +41,7 @@ defineFeature(feature, test => {
         });
 
         when('the user clicks on the "Show detail" button on an event element', async () => {
-            const button = AppComponnet.queryAllByText('show details')[0];
+            const button = AppComponnet.queryAllByText('Show Details')[0];
             await userEvent.click(button);
         });
 
@@ -64,7 +64,7 @@ defineFeature(feature, test => {
                 expect(eventList[0]).toBeInTheDocument();
             });
 
-            button = AppComponent.queryAllByText('show details')[0];
+            button = AppComponent.queryAllByText('Show Details')[0];
             await userEvent.click(button);
 
             const EventDOM = AppComponent.container.firstChild;
@@ -73,7 +73,7 @@ defineFeature(feature, test => {
         });
 
         when('the user clicks the "Hide detail" button on an event element', async () => {
-            button = AppComponent.queryAllByText('hide details')[0];
+            button = AppComponent.queryAllByText('Hide Details')[0];
             await userEvent.click(button);
         });
 

@@ -24,7 +24,7 @@ describe('<Event/> component', () => {
     });
 
     test('renders event details button with the title (show details)', () => {
-        expect(EventComponent.queryByText('show details')).toBeInTheDocument();
+        expect(EventComponent.queryByText('Show Details')).toBeInTheDocument();
     });
 
     test('by default,events details section must be hidden', () => {
@@ -34,7 +34,7 @@ describe('<Event/> component', () => {
 
     test('shows the details section when user clicks on the show details button', async () => {
         const user = userEvent.setup();
-        const button = EventComponent.queryByText('show details');
+        const button = EventComponent.queryByText('Show Details');
         await user.click(button);
 
         const eventDOM = EventComponent.container.firstChild;
@@ -44,7 +44,7 @@ describe('<Event/> component', () => {
 
     test('hides the details section when user clicks on the hide details button', async () => {
         const user = userEvent.setup();
-        const button = EventComponent.queryByText('hide details');
+        const button = EventComponent.queryByText('Hide Details');
         await user.click(button);
 
         const eventDOM = EventComponent.container.firstChild;
