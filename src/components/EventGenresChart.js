@@ -1,4 +1,4 @@
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Legend } from 'recharts';
 import { useEffect, useState } from 'react';
 const EventGenresChart = ({ events }) => {
     const [data, setData] = useState([]);
@@ -24,7 +24,7 @@ const EventGenresChart = ({ events }) => {
         const x = cx + radius * Math.cos(-midAngle * RADIAN) * 1.07;
         const y = cy + radius * Math.sin(-midAngle * RADIAN) * 1.07;
         return percent ? (
-            <text x={x} y={y} fill="black" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+            <text x={x} y={y} fill={COLORS[index % COLORS.length]} textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
                 {`${genres[index]} ${(percent * 100).toFixed(0)}%`}
             </text>
         ) : null;
@@ -45,7 +45,14 @@ const EventGenresChart = ({ events }) => {
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}
                 </Pie>
+                <Legend
+                    align="center"
+                    verticalAlign="bottom"
+                    layout="horizontal"
+                    wrapperstyle={{ paddingbottom: '10px' }}
+                />
             </PieChart>
+
         </ResponsiveContainer>
     );
 }
