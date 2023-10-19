@@ -22,7 +22,7 @@ const App = () => {
       setWarningAlert("");
     } else {
       // set the warning alert message to a non-empty string
-      setWarningAlert(" Displayed events has been loaded from Cache memory");
+      setWarningAlert("You are offline. Displayed events have been loaded from memory.");
     }
     fetchData();
   }, [currentCity, currentNOE]);
